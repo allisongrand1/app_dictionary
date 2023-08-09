@@ -4,7 +4,7 @@ part 'word_model.freezed.dart';
 part 'word_model.g.dart';
 
 @freezed
-class WordModel extends _$WordModel {
+class WordModel with _$WordModel {
   const factory WordModel({
     required WordModelDetailed model,
   }) = _WordModel;
@@ -14,7 +14,7 @@ class WordModel extends _$WordModel {
 }
 
 @freezed
-class WordModelDetailed extends _$WordModelDetailed {
+class WordModelDetailed with _$WordModelDetailed {
   const factory WordModelDetailed({
     required String word,
     required List<PhoneticsDetailed> phonetics,
@@ -28,7 +28,7 @@ class WordModelDetailed extends _$WordModelDetailed {
 }
 
 @freezed
-class PhoneticsDetailed extends _$PhoneticsDetailed {
+class PhoneticsDetailed with _$PhoneticsDetailed {
   const factory PhoneticsDetailed({
     required String? text,
     required String? audio,
@@ -41,7 +41,7 @@ class PhoneticsDetailed extends _$PhoneticsDetailed {
 }
 
 @freezed
-class MeaningsDetailed extends _$MeaningsDetailed {
+class MeaningsDetailed with _$MeaningsDetailed {
   const factory MeaningsDetailed({
     required String? partOfSpeech,
     required List<DefinitionsDetailed> definitions,
@@ -54,7 +54,7 @@ class MeaningsDetailed extends _$MeaningsDetailed {
 }
 
 @freezed
-class DefinitionsDetailed extends _$DefinitionsDetailed {
+class DefinitionsDetailed with _$DefinitionsDetailed {
   const factory DefinitionsDetailed({
     required String? definition,
     required List<String?> synonyms,
@@ -67,7 +67,7 @@ class DefinitionsDetailed extends _$DefinitionsDetailed {
 }
 
 @freezed
-class LicenseDetailed extends _$LicenseDetailed {
+class LicenseDetailed with _$LicenseDetailed {
   const factory LicenseDetailed({
     required String? name,
     required String? url,
