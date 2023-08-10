@@ -1,7 +1,53 @@
+import 'package:app_dictionary/data/model/remote_model/remote_word_model.dart';
 import 'package:dartz/dartz.dart';
-import 'package:app_dictionary/data/model/word_model.dart';
+import 'package:app_dictionary/common/error/failure.dart';
+import 'package:app_dictionary/common/constants/constant.dart';
+import 'package:dio/dio.dart';
 
 abstract class RemoteDataSource {
   ///* [getInfoWord] - получение данных о слове
-  Future<Either<Failure, WordModel>> getInfoWord();
+  Future<Either<Failures, RemoteWordModel>> getInfoWord(
+      {required String search});
+
+  ///* [setWordToBase] - сохранение слова в firebase
+  Future<void> setWordToBase();
+
+  ///* [getListWords] - получение списка созданных слов
+  Future<Either<Failures, List<RemoteWordModel>>> getListWords();
+}
+
+class RemoteDataSourceImpl implements RemoteDataSource {
+  final Dio _dio;
+
+  RemoteDataSourceImpl(this._dio);
+  @override
+  Future<Either<Failures, RemoteWordModel>> getInfoWord(
+      {required String search}) async {
+    try {
+      final response = await _dio
+          .get('https://api.dictionaryapi.dev/api/v2/entries/en/${search}');
+      if (response.statusCode == 200) {
+        final body = response.data as RemoteWordModel;
+        log.i('Get Word [${search}] from api');
+        return right(body);
+      } else {
+        log.e("Exception: Can't Get Word [${search}] from api");
+        return left(Failures.unknown(description: 'Status code is not 200'));
+      }
+    } on DioException catch (e) {
+      return left(Failures.unknown(description: e.toString()));
+    } on Exception catch (e) {
+      throw left(Failures.server());
+    }
+  }
+
+  @override
+  Future<void> setWordToBase() {
+    try {} catch (e) {}
+  }
+
+  @override
+  Future<Either<Failures, List<RemoteWordModel>>> getListWords() {
+    try {} catch (e) {}
+  }
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'word_model.dart';
+part of 'local_word_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,192 +14,33 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-WordModel _$WordModelFromJson(Map<String, dynamic> json) {
-  return _WordModel.fromJson(json);
-}
-
 /// @nodoc
-mixin _$WordModel {
-  WordModelDetailed get model => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $WordModelCopyWith<WordModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WordModelCopyWith<$Res> {
-  factory $WordModelCopyWith(WordModel value, $Res Function(WordModel) then) =
-      _$WordModelCopyWithImpl<$Res, WordModel>;
-  @useResult
-  $Res call({WordModelDetailed model});
-
-  $WordModelDetailedCopyWith<$Res> get model;
-}
-
-/// @nodoc
-class _$WordModelCopyWithImpl<$Res, $Val extends WordModel>
-    implements $WordModelCopyWith<$Res> {
-  _$WordModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? model = null,
-  }) {
-    return _then(_value.copyWith(
-      model: null == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as WordModelDetailed,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $WordModelDetailedCopyWith<$Res> get model {
-    return $WordModelDetailedCopyWith<$Res>(_value.model, (value) {
-      return _then(_value.copyWith(model: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_WordModelCopyWith<$Res> implements $WordModelCopyWith<$Res> {
-  factory _$$_WordModelCopyWith(
-          _$_WordModel value, $Res Function(_$_WordModel) then) =
-      __$$_WordModelCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({WordModelDetailed model});
-
-  @override
-  $WordModelDetailedCopyWith<$Res> get model;
-}
-
-/// @nodoc
-class __$$_WordModelCopyWithImpl<$Res>
-    extends _$WordModelCopyWithImpl<$Res, _$_WordModel>
-    implements _$$_WordModelCopyWith<$Res> {
-  __$$_WordModelCopyWithImpl(
-      _$_WordModel _value, $Res Function(_$_WordModel) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? model = null,
-  }) {
-    return _then(_$_WordModel(
-      model: null == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as WordModelDetailed,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_WordModel implements _WordModel {
-  const _$_WordModel({required this.model});
-
-  factory _$_WordModel.fromJson(Map<String, dynamic> json) =>
-      _$$_WordModelFromJson(json);
-
-  @override
-  final WordModelDetailed model;
-
-  @override
-  String toString() {
-    return 'WordModel(model: $model)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_WordModel &&
-            (identical(other.model, model) || other.model == model));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, model);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_WordModelCopyWith<_$_WordModel> get copyWith =>
-      __$$_WordModelCopyWithImpl<_$_WordModel>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_WordModelToJson(
-      this,
-    );
-  }
-}
-
-abstract class _WordModel implements WordModel {
-  const factory _WordModel({required final WordModelDetailed model}) =
-      _$_WordModel;
-
-  factory _WordModel.fromJson(Map<String, dynamic> json) =
-      _$_WordModel.fromJson;
-
-  @override
-  WordModelDetailed get model;
-  @override
-  @JsonKey(ignore: true)
-  _$$_WordModelCopyWith<_$_WordModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WordModelDetailed _$WordModelDetailedFromJson(Map<String, dynamic> json) {
-  return _WordModelDetailed.fromJson(json);
-}
-
-/// @nodoc
-mixin _$WordModelDetailed {
+mixin _$LocalWordModel {
   String get word => throw _privateConstructorUsedError;
   List<PhoneticsDetailed> get phonetics => throw _privateConstructorUsedError;
   List<MeaningsDetailed> get meanings => throw _privateConstructorUsedError;
-  LicenseDetailed get license => throw _privateConstructorUsedError;
-  List<String> get sourceUrls => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WordModelDetailedCopyWith<WordModelDetailed> get copyWith =>
+  $LocalWordModelCopyWith<LocalWordModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WordModelDetailedCopyWith<$Res> {
-  factory $WordModelDetailedCopyWith(
-          WordModelDetailed value, $Res Function(WordModelDetailed) then) =
-      _$WordModelDetailedCopyWithImpl<$Res, WordModelDetailed>;
+abstract class $LocalWordModelCopyWith<$Res> {
+  factory $LocalWordModelCopyWith(
+          LocalWordModel value, $Res Function(LocalWordModel) then) =
+      _$LocalWordModelCopyWithImpl<$Res, LocalWordModel>;
   @useResult
   $Res call(
       {String word,
       List<PhoneticsDetailed> phonetics,
-      List<MeaningsDetailed> meanings,
-      LicenseDetailed license,
-      List<String> sourceUrls});
-
-  $LicenseDetailedCopyWith<$Res> get license;
+      List<MeaningsDetailed> meanings});
 }
 
 /// @nodoc
-class _$WordModelDetailedCopyWithImpl<$Res, $Val extends WordModelDetailed>
-    implements $WordModelDetailedCopyWith<$Res> {
-  _$WordModelDetailedCopyWithImpl(this._value, this._then);
+class _$LocalWordModelCopyWithImpl<$Res, $Val extends LocalWordModel>
+    implements $LocalWordModelCopyWith<$Res> {
+  _$LocalWordModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -212,8 +53,6 @@ class _$WordModelDetailedCopyWithImpl<$Res, $Val extends WordModelDetailed>
     Object? word = null,
     Object? phonetics = null,
     Object? meanings = null,
-    Object? license = null,
-    Object? sourceUrls = null,
   }) {
     return _then(_value.copyWith(
       word: null == word
@@ -228,51 +67,30 @@ class _$WordModelDetailedCopyWithImpl<$Res, $Val extends WordModelDetailed>
           ? _value.meanings
           : meanings // ignore: cast_nullable_to_non_nullable
               as List<MeaningsDetailed>,
-      license: null == license
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as LicenseDetailed,
-      sourceUrls: null == sourceUrls
-          ? _value.sourceUrls
-          : sourceUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $LicenseDetailedCopyWith<$Res> get license {
-    return $LicenseDetailedCopyWith<$Res>(_value.license, (value) {
-      return _then(_value.copyWith(license: value) as $Val);
-    });
   }
 }
 
 /// @nodoc
-abstract class _$$_WordModelDetailedCopyWith<$Res>
-    implements $WordModelDetailedCopyWith<$Res> {
-  factory _$$_WordModelDetailedCopyWith(_$_WordModelDetailed value,
-          $Res Function(_$_WordModelDetailed) then) =
-      __$$_WordModelDetailedCopyWithImpl<$Res>;
+abstract class _$$_LocalWordModelCopyWith<$Res>
+    implements $LocalWordModelCopyWith<$Res> {
+  factory _$$_LocalWordModelCopyWith(
+          _$_LocalWordModel value, $Res Function(_$_LocalWordModel) then) =
+      __$$_LocalWordModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String word,
       List<PhoneticsDetailed> phonetics,
-      List<MeaningsDetailed> meanings,
-      LicenseDetailed license,
-      List<String> sourceUrls});
-
-  @override
-  $LicenseDetailedCopyWith<$Res> get license;
+      List<MeaningsDetailed> meanings});
 }
 
 /// @nodoc
-class __$$_WordModelDetailedCopyWithImpl<$Res>
-    extends _$WordModelDetailedCopyWithImpl<$Res, _$_WordModelDetailed>
-    implements _$$_WordModelDetailedCopyWith<$Res> {
-  __$$_WordModelDetailedCopyWithImpl(
-      _$_WordModelDetailed _value, $Res Function(_$_WordModelDetailed) _then)
+class __$$_LocalWordModelCopyWithImpl<$Res>
+    extends _$LocalWordModelCopyWithImpl<$Res, _$_LocalWordModel>
+    implements _$$_LocalWordModelCopyWith<$Res> {
+  __$$_LocalWordModelCopyWithImpl(
+      _$_LocalWordModel _value, $Res Function(_$_LocalWordModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -281,10 +99,8 @@ class __$$_WordModelDetailedCopyWithImpl<$Res>
     Object? word = null,
     Object? phonetics = null,
     Object? meanings = null,
-    Object? license = null,
-    Object? sourceUrls = null,
   }) {
-    return _then(_$_WordModelDetailed(
+    return _then(_$_LocalWordModel(
       word: null == word
           ? _value.word
           : word // ignore: cast_nullable_to_non_nullable
@@ -297,33 +113,19 @@ class __$$_WordModelDetailedCopyWithImpl<$Res>
           ? _value._meanings
           : meanings // ignore: cast_nullable_to_non_nullable
               as List<MeaningsDetailed>,
-      license: null == license
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as LicenseDetailed,
-      sourceUrls: null == sourceUrls
-          ? _value._sourceUrls
-          : sourceUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_WordModelDetailed implements _WordModelDetailed {
-  const _$_WordModelDetailed(
+
+class _$_LocalWordModel implements _LocalWordModel {
+  const _$_LocalWordModel(
       {required this.word,
       required final List<PhoneticsDetailed> phonetics,
-      required final List<MeaningsDetailed> meanings,
-      required this.license,
-      required final List<String> sourceUrls})
+      required final List<MeaningsDetailed> meanings})
       : _phonetics = phonetics,
-        _meanings = meanings,
-        _sourceUrls = sourceUrls;
-
-  factory _$_WordModelDetailed.fromJson(Map<String, dynamic> json) =>
-      _$$_WordModelDetailedFromJson(json);
+        _meanings = meanings;
 
   @override
   final String word;
@@ -344,69 +146,40 @@ class _$_WordModelDetailed implements _WordModelDetailed {
   }
 
   @override
-  final LicenseDetailed license;
-  final List<String> _sourceUrls;
-  @override
-  List<String> get sourceUrls {
-    if (_sourceUrls is EqualUnmodifiableListView) return _sourceUrls;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_sourceUrls);
-  }
-
-  @override
   String toString() {
-    return 'WordModelDetailed(word: $word, phonetics: $phonetics, meanings: $meanings, license: $license, sourceUrls: $sourceUrls)';
+    return 'LocalWordModel(word: $word, phonetics: $phonetics, meanings: $meanings)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WordModelDetailed &&
+            other is _$_LocalWordModel &&
             (identical(other.word, word) || other.word == word) &&
             const DeepCollectionEquality()
                 .equals(other._phonetics, _phonetics) &&
-            const DeepCollectionEquality().equals(other._meanings, _meanings) &&
-            (identical(other.license, license) || other.license == license) &&
-            const DeepCollectionEquality()
-                .equals(other._sourceUrls, _sourceUrls));
+            const DeepCollectionEquality().equals(other._meanings, _meanings));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       word,
       const DeepCollectionEquality().hash(_phonetics),
-      const DeepCollectionEquality().hash(_meanings),
-      license,
-      const DeepCollectionEquality().hash(_sourceUrls));
+      const DeepCollectionEquality().hash(_meanings));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WordModelDetailedCopyWith<_$_WordModelDetailed> get copyWith =>
-      __$$_WordModelDetailedCopyWithImpl<_$_WordModelDetailed>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_WordModelDetailedToJson(
-      this,
-    );
-  }
+  _$$_LocalWordModelCopyWith<_$_LocalWordModel> get copyWith =>
+      __$$_LocalWordModelCopyWithImpl<_$_LocalWordModel>(this, _$identity);
 }
 
-abstract class _WordModelDetailed implements WordModelDetailed {
-  const factory _WordModelDetailed(
+abstract class _LocalWordModel implements LocalWordModel {
+  const factory _LocalWordModel(
       {required final String word,
       required final List<PhoneticsDetailed> phonetics,
-      required final List<MeaningsDetailed> meanings,
-      required final LicenseDetailed license,
-      required final List<String> sourceUrls}) = _$_WordModelDetailed;
-
-  factory _WordModelDetailed.fromJson(Map<String, dynamic> json) =
-      _$_WordModelDetailed.fromJson;
+      required final List<MeaningsDetailed> meanings}) = _$_LocalWordModel;
 
   @override
   String get word;
@@ -415,27 +188,199 @@ abstract class _WordModelDetailed implements WordModelDetailed {
   @override
   List<MeaningsDetailed> get meanings;
   @override
-  LicenseDetailed get license;
-  @override
-  List<String> get sourceUrls;
-  @override
   @JsonKey(ignore: true)
-  _$$_WordModelDetailedCopyWith<_$_WordModelDetailed> get copyWith =>
+  _$$_LocalWordModelCopyWith<_$_LocalWordModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-PhoneticsDetailed _$PhoneticsDetailedFromJson(Map<String, dynamic> json) {
-  return _PhoneticsDetailed.fromJson(json);
+/// @nodoc
+mixin _$LocalWordModelDetailed {
+  String get word => throw _privateConstructorUsedError;
+  List<PhoneticsDetailed> get phonetics => throw _privateConstructorUsedError;
+  List<MeaningsDetailed> get meanings => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $LocalWordModelDetailedCopyWith<LocalWordModelDetailed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocalWordModelDetailedCopyWith<$Res> {
+  factory $LocalWordModelDetailedCopyWith(LocalWordModelDetailed value,
+          $Res Function(LocalWordModelDetailed) then) =
+      _$LocalWordModelDetailedCopyWithImpl<$Res, LocalWordModelDetailed>;
+  @useResult
+  $Res call(
+      {String word,
+      List<PhoneticsDetailed> phonetics,
+      List<MeaningsDetailed> meanings});
+}
+
+/// @nodoc
+class _$LocalWordModelDetailedCopyWithImpl<$Res,
+        $Val extends LocalWordModelDetailed>
+    implements $LocalWordModelDetailedCopyWith<$Res> {
+  _$LocalWordModelDetailedCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? word = null,
+    Object? phonetics = null,
+    Object? meanings = null,
+  }) {
+    return _then(_value.copyWith(
+      word: null == word
+          ? _value.word
+          : word // ignore: cast_nullable_to_non_nullable
+              as String,
+      phonetics: null == phonetics
+          ? _value.phonetics
+          : phonetics // ignore: cast_nullable_to_non_nullable
+              as List<PhoneticsDetailed>,
+      meanings: null == meanings
+          ? _value.meanings
+          : meanings // ignore: cast_nullable_to_non_nullable
+              as List<MeaningsDetailed>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_LocalWordModelDetailedCopyWith<$Res>
+    implements $LocalWordModelDetailedCopyWith<$Res> {
+  factory _$$_LocalWordModelDetailedCopyWith(_$_LocalWordModelDetailed value,
+          $Res Function(_$_LocalWordModelDetailed) then) =
+      __$$_LocalWordModelDetailedCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String word,
+      List<PhoneticsDetailed> phonetics,
+      List<MeaningsDetailed> meanings});
+}
+
+/// @nodoc
+class __$$_LocalWordModelDetailedCopyWithImpl<$Res>
+    extends _$LocalWordModelDetailedCopyWithImpl<$Res,
+        _$_LocalWordModelDetailed>
+    implements _$$_LocalWordModelDetailedCopyWith<$Res> {
+  __$$_LocalWordModelDetailedCopyWithImpl(_$_LocalWordModelDetailed _value,
+      $Res Function(_$_LocalWordModelDetailed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? word = null,
+    Object? phonetics = null,
+    Object? meanings = null,
+  }) {
+    return _then(_$_LocalWordModelDetailed(
+      word: null == word
+          ? _value.word
+          : word // ignore: cast_nullable_to_non_nullable
+              as String,
+      phonetics: null == phonetics
+          ? _value._phonetics
+          : phonetics // ignore: cast_nullable_to_non_nullable
+              as List<PhoneticsDetailed>,
+      meanings: null == meanings
+          ? _value._meanings
+          : meanings // ignore: cast_nullable_to_non_nullable
+              as List<MeaningsDetailed>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LocalWordModelDetailed implements _LocalWordModelDetailed {
+  const _$_LocalWordModelDetailed(
+      {required this.word,
+      required final List<PhoneticsDetailed> phonetics,
+      required final List<MeaningsDetailed> meanings})
+      : _phonetics = phonetics,
+        _meanings = meanings;
+
+  @override
+  final String word;
+  final List<PhoneticsDetailed> _phonetics;
+  @override
+  List<PhoneticsDetailed> get phonetics {
+    if (_phonetics is EqualUnmodifiableListView) return _phonetics;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_phonetics);
+  }
+
+  final List<MeaningsDetailed> _meanings;
+  @override
+  List<MeaningsDetailed> get meanings {
+    if (_meanings is EqualUnmodifiableListView) return _meanings;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_meanings);
+  }
+
+  @override
+  String toString() {
+    return 'LocalWordModelDetailed(word: $word, phonetics: $phonetics, meanings: $meanings)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LocalWordModelDetailed &&
+            (identical(other.word, word) || other.word == word) &&
+            const DeepCollectionEquality()
+                .equals(other._phonetics, _phonetics) &&
+            const DeepCollectionEquality().equals(other._meanings, _meanings));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      word,
+      const DeepCollectionEquality().hash(_phonetics),
+      const DeepCollectionEquality().hash(_meanings));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LocalWordModelDetailedCopyWith<_$_LocalWordModelDetailed> get copyWith =>
+      __$$_LocalWordModelDetailedCopyWithImpl<_$_LocalWordModelDetailed>(
+          this, _$identity);
+}
+
+abstract class _LocalWordModelDetailed implements LocalWordModelDetailed {
+  const factory _LocalWordModelDetailed(
+          {required final String word,
+          required final List<PhoneticsDetailed> phonetics,
+          required final List<MeaningsDetailed> meanings}) =
+      _$_LocalWordModelDetailed;
+
+  @override
+  String get word;
+  @override
+  List<PhoneticsDetailed> get phonetics;
+  @override
+  List<MeaningsDetailed> get meanings;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LocalWordModelDetailedCopyWith<_$_LocalWordModelDetailed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$PhoneticsDetailed {
   String? get text => throw _privateConstructorUsedError;
   String? get audio => throw _privateConstructorUsedError;
-  String? get sourceUrl => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get license => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PhoneticsDetailedCopyWith<PhoneticsDetailed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -447,11 +392,7 @@ abstract class $PhoneticsDetailedCopyWith<$Res> {
           PhoneticsDetailed value, $Res Function(PhoneticsDetailed) then) =
       _$PhoneticsDetailedCopyWithImpl<$Res, PhoneticsDetailed>;
   @useResult
-  $Res call(
-      {String? text,
-      String? audio,
-      String? sourceUrl,
-      Map<String, dynamic>? license});
+  $Res call({String? text, String? audio});
 }
 
 /// @nodoc
@@ -469,8 +410,6 @@ class _$PhoneticsDetailedCopyWithImpl<$Res, $Val extends PhoneticsDetailed>
   $Res call({
     Object? text = freezed,
     Object? audio = freezed,
-    Object? sourceUrl = freezed,
-    Object? license = freezed,
   }) {
     return _then(_value.copyWith(
       text: freezed == text
@@ -481,14 +420,6 @@ class _$PhoneticsDetailedCopyWithImpl<$Res, $Val extends PhoneticsDetailed>
           ? _value.audio
           : audio // ignore: cast_nullable_to_non_nullable
               as String?,
-      sourceUrl: freezed == sourceUrl
-          ? _value.sourceUrl
-          : sourceUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      license: freezed == license
-          ? _value.license
-          : license // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -501,11 +432,7 @@ abstract class _$$_PhoneticsDetailedCopyWith<$Res>
       __$$_PhoneticsDetailedCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? text,
-      String? audio,
-      String? sourceUrl,
-      Map<String, dynamic>? license});
+  $Res call({String? text, String? audio});
 }
 
 /// @nodoc
@@ -521,8 +448,6 @@ class __$$_PhoneticsDetailedCopyWithImpl<$Res>
   $Res call({
     Object? text = freezed,
     Object? audio = freezed,
-    Object? sourceUrl = freezed,
-    Object? license = freezed,
   }) {
     return _then(_$_PhoneticsDetailed(
       text: freezed == text
@@ -533,50 +458,23 @@ class __$$_PhoneticsDetailedCopyWithImpl<$Res>
           ? _value.audio
           : audio // ignore: cast_nullable_to_non_nullable
               as String?,
-      sourceUrl: freezed == sourceUrl
-          ? _value.sourceUrl
-          : sourceUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      license: freezed == license
-          ? _value._license
-          : license // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_PhoneticsDetailed implements _PhoneticsDetailed {
-  const _$_PhoneticsDetailed(
-      {required this.text,
-      required this.audio,
-      required this.sourceUrl,
-      required final Map<String, dynamic>? license})
-      : _license = license;
 
-  factory _$_PhoneticsDetailed.fromJson(Map<String, dynamic> json) =>
-      _$$_PhoneticsDetailedFromJson(json);
+class _$_PhoneticsDetailed implements _PhoneticsDetailed {
+  const _$_PhoneticsDetailed({required this.text, required this.audio});
 
   @override
   final String? text;
   @override
   final String? audio;
-  @override
-  final String? sourceUrl;
-  final Map<String, dynamic>? _license;
-  @override
-  Map<String, dynamic>? get license {
-    final value = _license;
-    if (value == null) return null;
-    if (_license is EqualUnmodifiableMapView) return _license;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
 
   @override
   String toString() {
-    return 'PhoneticsDetailed(text: $text, audio: $audio, sourceUrl: $sourceUrl, license: $license)';
+    return 'PhoneticsDetailed(text: $text, audio: $audio)';
   }
 
   @override
@@ -585,16 +483,11 @@ class _$_PhoneticsDetailed implements _PhoneticsDetailed {
         (other.runtimeType == runtimeType &&
             other is _$_PhoneticsDetailed &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.audio, audio) || other.audio == audio) &&
-            (identical(other.sourceUrl, sourceUrl) ||
-                other.sourceUrl == sourceUrl) &&
-            const DeepCollectionEquality().equals(other._license, _license));
+            (identical(other.audio, audio) || other.audio == audio));
   }
 
-  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, text, audio, sourceUrl,
-      const DeepCollectionEquality().hash(_license));
+  int get hashCode => Object.hash(runtimeType, text, audio);
 
   @JsonKey(ignore: true)
   @override
@@ -602,41 +495,21 @@ class _$_PhoneticsDetailed implements _PhoneticsDetailed {
   _$$_PhoneticsDetailedCopyWith<_$_PhoneticsDetailed> get copyWith =>
       __$$_PhoneticsDetailedCopyWithImpl<_$_PhoneticsDetailed>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_PhoneticsDetailedToJson(
-      this,
-    );
-  }
 }
 
 abstract class _PhoneticsDetailed implements PhoneticsDetailed {
   const factory _PhoneticsDetailed(
       {required final String? text,
-      required final String? audio,
-      required final String? sourceUrl,
-      required final Map<String, dynamic>? license}) = _$_PhoneticsDetailed;
-
-  factory _PhoneticsDetailed.fromJson(Map<String, dynamic> json) =
-      _$_PhoneticsDetailed.fromJson;
+      required final String? audio}) = _$_PhoneticsDetailed;
 
   @override
   String? get text;
   @override
   String? get audio;
   @override
-  String? get sourceUrl;
-  @override
-  Map<String, dynamic>? get license;
-  @override
   @JsonKey(ignore: true)
   _$$_PhoneticsDetailedCopyWith<_$_PhoneticsDetailed> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-MeaningsDetailed _$MeaningsDetailedFromJson(Map<String, dynamic> json) {
-  return _MeaningsDetailed.fromJson(json);
 }
 
 /// @nodoc
@@ -647,7 +520,6 @@ mixin _$MeaningsDetailed {
   List<String?> get synonyms => throw _privateConstructorUsedError;
   List<String?> get antonyms => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MeaningsDetailedCopyWith<MeaningsDetailed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -758,7 +630,7 @@ class __$$_MeaningsDetailedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_MeaningsDetailed implements _MeaningsDetailed {
   const _$_MeaningsDetailed(
       {required this.partOfSpeech,
@@ -768,9 +640,6 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
       : _definitions = definitions,
         _synonyms = synonyms,
         _antonyms = antonyms;
-
-  factory _$_MeaningsDetailed.fromJson(Map<String, dynamic> json) =>
-      _$$_MeaningsDetailedFromJson(json);
 
   @override
   final String? partOfSpeech;
@@ -816,7 +685,6 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
             const DeepCollectionEquality().equals(other._antonyms, _antonyms));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -830,13 +698,6 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
   @pragma('vm:prefer-inline')
   _$$_MeaningsDetailedCopyWith<_$_MeaningsDetailed> get copyWith =>
       __$$_MeaningsDetailedCopyWithImpl<_$_MeaningsDetailed>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MeaningsDetailedToJson(
-      this,
-    );
-  }
 }
 
 abstract class _MeaningsDetailed implements MeaningsDetailed {
@@ -845,9 +706,6 @@ abstract class _MeaningsDetailed implements MeaningsDetailed {
       required final List<DefinitionsDetailed> definitions,
       required final List<String?> synonyms,
       required final List<String?> antonyms}) = _$_MeaningsDetailed;
-
-  factory _MeaningsDetailed.fromJson(Map<String, dynamic> json) =
-      _$_MeaningsDetailed.fromJson;
 
   @override
   String? get partOfSpeech;
@@ -863,10 +721,6 @@ abstract class _MeaningsDetailed implements MeaningsDetailed {
       throw _privateConstructorUsedError;
 }
 
-DefinitionsDetailed _$DefinitionsDetailedFromJson(Map<String, dynamic> json) {
-  return _DefinitionsDetailed.fromJson(json);
-}
-
 /// @nodoc
 mixin _$DefinitionsDetailed {
   String? get definition => throw _privateConstructorUsedError;
@@ -874,7 +728,6 @@ mixin _$DefinitionsDetailed {
   List<String?> get antonyms => throw _privateConstructorUsedError;
   String? get example => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DefinitionsDetailedCopyWith<DefinitionsDetailed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -985,7 +838,7 @@ class __$$_DefinitionsDetailedCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_DefinitionsDetailed implements _DefinitionsDetailed {
   const _$_DefinitionsDetailed(
       {required this.definition,
@@ -994,9 +847,6 @@ class _$_DefinitionsDetailed implements _DefinitionsDetailed {
       required this.example})
       : _synonyms = synonyms,
         _antonyms = antonyms;
-
-  factory _$_DefinitionsDetailed.fromJson(Map<String, dynamic> json) =>
-      _$$_DefinitionsDetailedFromJson(json);
 
   @override
   final String? definition;
@@ -1036,7 +886,6 @@ class _$_DefinitionsDetailed implements _DefinitionsDetailed {
             (identical(other.example, example) || other.example == example));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1051,13 +900,6 @@ class _$_DefinitionsDetailed implements _DefinitionsDetailed {
   _$$_DefinitionsDetailedCopyWith<_$_DefinitionsDetailed> get copyWith =>
       __$$_DefinitionsDetailedCopyWithImpl<_$_DefinitionsDetailed>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_DefinitionsDetailedToJson(
-      this,
-    );
-  }
 }
 
 abstract class _DefinitionsDetailed implements DefinitionsDetailed {
@@ -1066,9 +908,6 @@ abstract class _DefinitionsDetailed implements DefinitionsDetailed {
       required final List<String?> synonyms,
       required final List<String?> antonyms,
       required final String? example}) = _$_DefinitionsDetailed;
-
-  factory _DefinitionsDetailed.fromJson(Map<String, dynamic> json) =
-      _$_DefinitionsDetailed.fromJson;
 
   @override
   String? get definition;
@@ -1081,159 +920,5 @@ abstract class _DefinitionsDetailed implements DefinitionsDetailed {
   @override
   @JsonKey(ignore: true)
   _$$_DefinitionsDetailedCopyWith<_$_DefinitionsDetailed> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LicenseDetailed _$LicenseDetailedFromJson(Map<String, dynamic> json) {
-  return _LicenseDetailed.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LicenseDetailed {
-  String? get name => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LicenseDetailedCopyWith<LicenseDetailed> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LicenseDetailedCopyWith<$Res> {
-  factory $LicenseDetailedCopyWith(
-          LicenseDetailed value, $Res Function(LicenseDetailed) then) =
-      _$LicenseDetailedCopyWithImpl<$Res, LicenseDetailed>;
-  @useResult
-  $Res call({String? name, String? url});
-}
-
-/// @nodoc
-class _$LicenseDetailedCopyWithImpl<$Res, $Val extends LicenseDetailed>
-    implements $LicenseDetailedCopyWith<$Res> {
-  _$LicenseDetailedCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_LicenseDetailedCopyWith<$Res>
-    implements $LicenseDetailedCopyWith<$Res> {
-  factory _$$_LicenseDetailedCopyWith(
-          _$_LicenseDetailed value, $Res Function(_$_LicenseDetailed) then) =
-      __$$_LicenseDetailedCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? name, String? url});
-}
-
-/// @nodoc
-class __$$_LicenseDetailedCopyWithImpl<$Res>
-    extends _$LicenseDetailedCopyWithImpl<$Res, _$_LicenseDetailed>
-    implements _$$_LicenseDetailedCopyWith<$Res> {
-  __$$_LicenseDetailedCopyWithImpl(
-      _$_LicenseDetailed _value, $Res Function(_$_LicenseDetailed) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_$_LicenseDetailed(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_LicenseDetailed implements _LicenseDetailed {
-  const _$_LicenseDetailed({required this.name, required this.url});
-
-  factory _$_LicenseDetailed.fromJson(Map<String, dynamic> json) =>
-      _$$_LicenseDetailedFromJson(json);
-
-  @override
-  final String? name;
-  @override
-  final String? url;
-
-  @override
-  String toString() {
-    return 'LicenseDetailed(name: $name, url: $url)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LicenseDetailed &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.url, url) || other.url == url));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, url);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_LicenseDetailedCopyWith<_$_LicenseDetailed> get copyWith =>
-      __$$_LicenseDetailedCopyWithImpl<_$_LicenseDetailed>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_LicenseDetailedToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LicenseDetailed implements LicenseDetailed {
-  const factory _LicenseDetailed(
-      {required final String? name,
-      required final String? url}) = _$_LicenseDetailed;
-
-  factory _LicenseDetailed.fromJson(Map<String, dynamic> json) =
-      _$_LicenseDetailed.fromJson;
-
-  @override
-  String? get name;
-  @override
-  String? get url;
-  @override
-  @JsonKey(ignore: true)
-  _$$_LicenseDetailedCopyWith<_$_LicenseDetailed> get copyWith =>
       throw _privateConstructorUsedError;
 }

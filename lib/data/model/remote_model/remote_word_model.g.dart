@@ -1,22 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'word_model.dart';
+part of 'remote_word_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_WordModel _$$_WordModelFromJson(Map<String, dynamic> json) => _$_WordModel(
-      model: WordModelDetailed.fromJson(json['model'] as Map<String, dynamic>),
+_$_RemoteWordModel _$$_RemoteWordModelFromJson(Map<String, dynamic> json) =>
+    _$_RemoteWordModel(
+      model: RemoteWordModelDetailed.fromJson(
+          json['model'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_WordModelToJson(_$_WordModel instance) =>
+Map<String, dynamic> _$$_RemoteWordModelToJson(_$_RemoteWordModel instance) =>
     <String, dynamic>{
       'model': instance.model,
     };
 
-_$_WordModelDetailed _$$_WordModelDetailedFromJson(Map<String, dynamic> json) =>
-    _$_WordModelDetailed(
+_$_RemoteWordModelDetailed _$$_RemoteWordModelDetailedFromJson(
+        Map<String, dynamic> json) =>
+    _$_RemoteWordModelDetailed(
       word: json['word'] as String,
       phonetics: (json['phonetics'] as List<dynamic>)
           .map((e) => PhoneticsDetailed.fromJson(e as Map<String, dynamic>))
@@ -31,8 +34,8 @@ _$_WordModelDetailed _$$_WordModelDetailedFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_WordModelDetailedToJson(
-        _$_WordModelDetailed instance) =>
+Map<String, dynamic> _$$_RemoteWordModelDetailedToJson(
+        _$_RemoteWordModelDetailed instance) =>
     <String, dynamic>{
       'word': instance.word,
       'phonetics': instance.phonetics,

@@ -1,30 +1,30 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'word_model.freezed.dart';
-part 'word_model.g.dart';
+part 'remote_word_model.freezed.dart';
+part 'remote_word_model.g.dart';
 
 @freezed
-class WordModel with _$WordModel {
-  const factory WordModel({
-    required WordModelDetailed model,
-  }) = _WordModel;
+class RemoteWordModel with _$RemoteWordModel {
+  const factory RemoteWordModel({
+    required RemoteWordModelDetailed model,
+  }) = _RemoteWordModel;
 
-  factory WordModel.fromJson(Map<String, dynamic> json) =>
-      _$WordModelFromJson(json);
+  factory RemoteWordModel.fromJson(Map<String, dynamic> json) =>
+      _$RemoteWordModelFromJson(json);
 }
 
 @freezed
-class WordModelDetailed with _$WordModelDetailed {
-  const factory WordModelDetailed({
+class RemoteWordModelDetailed with _$RemoteWordModelDetailed {
+  const factory RemoteWordModelDetailed({
     required String word,
     required List<PhoneticsDetailed> phonetics,
     required List<MeaningsDetailed> meanings,
     required LicenseDetailed license,
     required List<String> sourceUrls,
-  }) = _WordModelDetailed;
+  }) = _RemoteWordModelDetailed;
 
-  factory WordModelDetailed.fromJson(Map<String, dynamic> json) =>
-      _$WordModelDetailedFromJson(json);
+  factory RemoteWordModelDetailed.fromJson(Map<String, dynamic> json) =>
+      _$RemoteWordModelDetailedFromJson(json);
 }
 
 @freezed
