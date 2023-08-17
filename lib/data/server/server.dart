@@ -1,3 +1,4 @@
+import 'package:app_dictionary/data/model/local_model/local_word_model.dart';
 import 'package:app_dictionary/data/model/remote_model/remote_word_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:app_dictionary/common/error/failure.dart';
@@ -9,11 +10,11 @@ abstract class RemoteDataSource {
   Future<Either<Failures, RemoteWordModel>> getInfoWord(
       {required String search});
 
-  ///* [setWordToBase] - сохранение слова в firebase
-  Future<void> setWordToBase();
-
   ///* [getListWords] - получение списка созданных слов
-  Future<Either<Failures, List<RemoteWordModel>>> getListWords();
+  Future<Either<Failures, List<LocalWordModel>>> getListWords();
+
+  ///* [addInList] - добавить слово в список
+  // Future<List<LocalWordModel>> addInList();
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -42,12 +43,11 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   }
 
   @override
-  Future<void> setWordToBase() {
-    try {} catch (e) {}
+  Future<Either<Failures, List<LocalWordModel>>> getListWords() {
+    // TODO: implement addInList
+    throw UnimplementedError();
   }
 
-  @override
-  Future<Either<Failures, List<RemoteWordModel>>> getListWords() {
-    try {} catch (e) {}
-  }
+  /* @override
+  Future<List<LocalWordModel>> addInList(LocalWordModel localWordModel) {} */
 }

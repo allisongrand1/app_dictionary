@@ -1,7 +1,10 @@
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
+import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_bloc.dart';
+import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_state.dart';
 import 'package:clip_shadow/clip_shadow.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,13 +17,35 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed('/new');
-          },
-          child: Text('home'),
-        ),
+      body: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          if (state is InitialState) {
+            return Container();
+          } else if (state is LoadingState) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is LoadedHomeState) {
+            if (state.listOfWords.isNotEmpty) {
+              return ListView.builder(itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Text(state.listOfWords[index].word),
+                  title: Text(state.listOfWords[index].meanings[index]
+                      .definitions[index].definition!),
+                );
+              });
+            }
+            return Center(
+              child: Text(
+                  'Спиcок пока пуст:( /n/n Попробуйте дополнить его новыми словами!'),
+            );
+          } else if (state is FailState) {
+            return Center(
+              child: Text('Ошибка'),
+            );
+          }
+          return Container();
+        },
       ),
       bottomNavigationBar: Stack(
         alignment: Alignment.center,
