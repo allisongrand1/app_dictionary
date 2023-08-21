@@ -1,11 +1,13 @@
 import 'package:app_dictionary/data/model/local_model/local_word_model.dart';
 import 'package:app_dictionary/data/model/remote_model/remote_word_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:app_dictionary/common/error/failure.dart';
 import 'package:app_dictionary/common/constants/constant.dart';
 import 'package:dio/dio.dart';
 
 abstract class RemoteDataSource {
+  
   ///* [getInfoWord] - получение данных о слове
   Future<Either<Failures, RemoteWordModel>> getInfoWord(
       {required String search});
@@ -18,6 +20,8 @@ abstract class RemoteDataSource {
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
+  var db = FirebaseFirestore.instance;
+  
   final Dio _dio;
 
   RemoteDataSourceImpl(this._dio);
@@ -47,6 +51,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     // TODO: implement addInList
     throw UnimplementedError();
   }
+
 
   /* @override
   Future<List<LocalWordModel>> addInList(LocalWordModel localWordModel) {} */

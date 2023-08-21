@@ -1,9 +1,6 @@
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_bloc.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_state.dart';
-import 'package:clip_shadow/clip_shadow.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,8 +49,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Positioned(
             bottom: 10,
-            child: ClipShadow(
-              boxShadow: [
+            child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
                 BoxShadow(
                     color: Colors.white,
                     offset: Offset(-5, -5),
@@ -65,8 +63,6 @@ class _HomePageState extends State<HomePage> {
                     spreadRadius: 1,
                     blurRadius: 15),
               ],
-              child: Container(
-                decoration: BoxDecoration(
                   border: Border.all(color: Color.fromARGB(24, 84, 112, 124)),
                   shape: BoxShape.circle,
                   color: Colors.amber,
@@ -80,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.of(context).pushNamed('/new');
                     }),
               ),
-            ),
+          
           ),
           Container(
             height: 70,
