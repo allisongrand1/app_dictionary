@@ -7,10 +7,11 @@ class AddWordBloc extends Bloc<AddWordEvent, AddWordState> {
   final Repository _repository;
   AddWordBloc(this._repository) : super(InitialState()) {
     on<FindWordEvent>((event, emit) async {
+      
       final word = await _repository.getInfo(event.search);
 
       word.fold((failure) => emit(FailState(failure)),
-          (r) => emit(LoadedNewWordState()));
+          (r) => emit(LoadedNewWordState(r)));
     });
   }
 }

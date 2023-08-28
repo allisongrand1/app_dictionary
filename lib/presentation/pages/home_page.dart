@@ -1,4 +1,6 @@
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
+import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_bloc.dart';
+import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_event.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_bloc.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromARGB(108, 84, 112, 124),
                     ),
                     onPressed: () {
+                      
                       Navigator.of(context).pushNamed('/new');
                     }),
               ),

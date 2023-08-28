@@ -8,18 +8,6 @@ part of 'remote_word_model.dart';
 
 _$_RemoteWordModel _$$_RemoteWordModelFromJson(Map<String, dynamic> json) =>
     _$_RemoteWordModel(
-      model: RemoteWordModelDetailed.fromJson(
-          json['model'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_RemoteWordModelToJson(_$_RemoteWordModel instance) =>
-    <String, dynamic>{
-      'model': instance.model,
-    };
-
-_$_RemoteWordModelDetailed _$$_RemoteWordModelDetailedFromJson(
-        Map<String, dynamic> json) =>
-    _$_RemoteWordModelDetailed(
       word: json['word'] as String,
       phonetics: (json['phonetics'] as List<dynamic>)
           .map((e) => PhoneticsDetailed.fromJson(e as Map<String, dynamic>))
@@ -30,12 +18,11 @@ _$_RemoteWordModelDetailed _$$_RemoteWordModelDetailedFromJson(
       license:
           LicenseDetailed.fromJson(json['license'] as Map<String, dynamic>),
       sourceUrls: (json['sourceUrls'] as List<dynamic>)
-          .map((e) => e as String)
+          .map((e) => e as String?)
           .toList(),
     );
 
-Map<String, dynamic> _$$_RemoteWordModelDetailedToJson(
-        _$_RemoteWordModelDetailed instance) =>
+Map<String, dynamic> _$$_RemoteWordModelToJson(_$_RemoteWordModel instance) =>
     <String, dynamic>{
       'word': instance.word,
       'phonetics': instance.phonetics,
@@ -64,13 +51,15 @@ Map<String, dynamic> _$$_PhoneticsDetailedToJson(
 _$_MeaningsDetailed _$$_MeaningsDetailedFromJson(Map<String, dynamic> json) =>
     _$_MeaningsDetailed(
       partOfSpeech: json['partOfSpeech'] as String?,
-      definitions: (json['definitions'] as List<dynamic>)
-          .map((e) => DefinitionsDetailed.fromJson(e as Map<String, dynamic>))
+      definitions: (json['definitions'] as List<dynamic>?)
+          ?.map((e) => DefinitionsDetailed.fromJson(e as Map<String, dynamic>))
           .toList(),
-      synonyms:
-          (json['synonyms'] as List<dynamic>).map((e) => e as String?).toList(),
-      antonyms:
-          (json['antonyms'] as List<dynamic>).map((e) => e as String?).toList(),
+      synonyms: (json['synonyms'] as List<dynamic>?)
+          ?.map((e) => e as String?)
+          .toList(),
+      antonyms: (json['antonyms'] as List<dynamic>?)
+          ?.map((e) => e as String?)
+          .toList(),
     );
 
 Map<String, dynamic> _$$_MeaningsDetailedToJson(_$_MeaningsDetailed instance) =>
@@ -85,10 +74,12 @@ _$_DefinitionsDetailed _$$_DefinitionsDetailedFromJson(
         Map<String, dynamic> json) =>
     _$_DefinitionsDetailed(
       definition: json['definition'] as String?,
-      synonyms:
-          (json['synonyms'] as List<dynamic>).map((e) => e as String?).toList(),
-      antonyms:
-          (json['antonyms'] as List<dynamic>).map((e) => e as String?).toList(),
+      synonyms: (json['synonyms'] as List<dynamic>?)
+          ?.map((e) => e as String?)
+          .toList(),
+      antonyms: (json['antonyms'] as List<dynamic>?)
+          ?.map((e) => e as String?)
+          .toList(),
       example: json['example'] as String?,
     );
 

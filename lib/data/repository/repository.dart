@@ -5,13 +5,13 @@ import 'package:app_dictionary/data/server/server.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class Repository {
-  late RemoteDataSource remoteDataSource;
   Future<Either<Failures, dynamic>> getInfo(dynamic search);
 }
 
 //обработка информации по новому слову
 class NewRemoteWordModelRepository extends Repository {
-  NewRemoteWordModelRepository(remoteDataSource);
+  final RemoteDataSource remoteDataSource;
+  NewRemoteWordModelRepository(this.remoteDataSource);
   @override
   Future<Either<Failures, RemoteWordModel>> getInfo(dynamic search) async {
     return await remoteDataSource.getInfoWord(search: search);
@@ -20,7 +20,8 @@ class NewRemoteWordModelRepository extends Repository {
 
 //обработка информации по добавленному слову
 class RemoteWordModelRepository extends Repository {
-  RemoteWordModelRepository(remoteDataSource);
+  final RemoteDataSource remoteDataSource;
+  RemoteWordModelRepository(this.remoteDataSource);
 
   @override
   Future<Either<Failures, RemoteWordModel>> getInfo(dynamic search) async {
@@ -31,7 +32,8 @@ class RemoteWordModelRepository extends Repository {
 
 //работа со списком слов
 class HomePageRepository extends Repository {
-  HomePageRepository(remoteDataSource);
+  final RemoteDataSource remoteDataSource;
+  HomePageRepository(this.remoteDataSource);
 
   @override
   Future<Either<Failures, List<LocalWordModel>>> getInfo(dynamic search) async {

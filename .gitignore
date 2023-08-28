@@ -33,10 +33,6 @@
 *.inject.dart
 *.inject.summary
 .fvm/flutter_sdk
-android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
-macos/Runner/GoogleService-Info.plist
-web/index.html
 # Web related
 lib/generated_plugin_registrant.dart
 

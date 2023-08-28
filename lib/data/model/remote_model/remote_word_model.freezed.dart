@@ -20,7 +20,11 @@ RemoteWordModel _$RemoteWordModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RemoteWordModel {
-  RemoteWordModelDetailed get model => throw _privateConstructorUsedError;
+  String get word => throw _privateConstructorUsedError;
+  List<PhoneticsDetailed> get phonetics => throw _privateConstructorUsedError;
+  List<MeaningsDetailed> get meanings => throw _privateConstructorUsedError;
+  LicenseDetailed get license => throw _privateConstructorUsedError;
+  List<String?> get sourceUrls => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,176 +38,20 @@ abstract class $RemoteWordModelCopyWith<$Res> {
           RemoteWordModel value, $Res Function(RemoteWordModel) then) =
       _$RemoteWordModelCopyWithImpl<$Res, RemoteWordModel>;
   @useResult
-  $Res call({RemoteWordModelDetailed model});
+  $Res call(
+      {String word,
+      List<PhoneticsDetailed> phonetics,
+      List<MeaningsDetailed> meanings,
+      LicenseDetailed license,
+      List<String?> sourceUrls});
 
-  $RemoteWordModelDetailedCopyWith<$Res> get model;
+  $LicenseDetailedCopyWith<$Res> get license;
 }
 
 /// @nodoc
 class _$RemoteWordModelCopyWithImpl<$Res, $Val extends RemoteWordModel>
     implements $RemoteWordModelCopyWith<$Res> {
   _$RemoteWordModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? model = null,
-  }) {
-    return _then(_value.copyWith(
-      model: null == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as RemoteWordModelDetailed,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RemoteWordModelDetailedCopyWith<$Res> get model {
-    return $RemoteWordModelDetailedCopyWith<$Res>(_value.model, (value) {
-      return _then(_value.copyWith(model: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$_RemoteWordModelCopyWith<$Res>
-    implements $RemoteWordModelCopyWith<$Res> {
-  factory _$$_RemoteWordModelCopyWith(
-          _$_RemoteWordModel value, $Res Function(_$_RemoteWordModel) then) =
-      __$$_RemoteWordModelCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({RemoteWordModelDetailed model});
-
-  @override
-  $RemoteWordModelDetailedCopyWith<$Res> get model;
-}
-
-/// @nodoc
-class __$$_RemoteWordModelCopyWithImpl<$Res>
-    extends _$RemoteWordModelCopyWithImpl<$Res, _$_RemoteWordModel>
-    implements _$$_RemoteWordModelCopyWith<$Res> {
-  __$$_RemoteWordModelCopyWithImpl(
-      _$_RemoteWordModel _value, $Res Function(_$_RemoteWordModel) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? model = null,
-  }) {
-    return _then(_$_RemoteWordModel(
-      model: null == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as RemoteWordModelDetailed,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_RemoteWordModel implements _RemoteWordModel {
-  const _$_RemoteWordModel({required this.model});
-
-  factory _$_RemoteWordModel.fromJson(Map<String, dynamic> json) =>
-      _$$_RemoteWordModelFromJson(json);
-
-  @override
-  final RemoteWordModelDetailed model;
-
-  @override
-  String toString() {
-    return 'RemoteWordModel(model: $model)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_RemoteWordModel &&
-            (identical(other.model, model) || other.model == model));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, model);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_RemoteWordModelCopyWith<_$_RemoteWordModel> get copyWith =>
-      __$$_RemoteWordModelCopyWithImpl<_$_RemoteWordModel>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_RemoteWordModelToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RemoteWordModel implements RemoteWordModel {
-  const factory _RemoteWordModel(
-      {required final RemoteWordModelDetailed model}) = _$_RemoteWordModel;
-
-  factory _RemoteWordModel.fromJson(Map<String, dynamic> json) =
-      _$_RemoteWordModel.fromJson;
-
-  @override
-  RemoteWordModelDetailed get model;
-  @override
-  @JsonKey(ignore: true)
-  _$$_RemoteWordModelCopyWith<_$_RemoteWordModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RemoteWordModelDetailed _$RemoteWordModelDetailedFromJson(
-    Map<String, dynamic> json) {
-  return _RemoteWordModelDetailed.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RemoteWordModelDetailed {
-  String get word => throw _privateConstructorUsedError;
-  List<PhoneticsDetailed> get phonetics => throw _privateConstructorUsedError;
-  List<MeaningsDetailed> get meanings => throw _privateConstructorUsedError;
-  LicenseDetailed get license => throw _privateConstructorUsedError;
-  List<String> get sourceUrls => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RemoteWordModelDetailedCopyWith<RemoteWordModelDetailed> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RemoteWordModelDetailedCopyWith<$Res> {
-  factory $RemoteWordModelDetailedCopyWith(RemoteWordModelDetailed value,
-          $Res Function(RemoteWordModelDetailed) then) =
-      _$RemoteWordModelDetailedCopyWithImpl<$Res, RemoteWordModelDetailed>;
-  @useResult
-  $Res call(
-      {String word,
-      List<PhoneticsDetailed> phonetics,
-      List<MeaningsDetailed> meanings,
-      LicenseDetailed license,
-      List<String> sourceUrls});
-
-  $LicenseDetailedCopyWith<$Res> get license;
-}
-
-/// @nodoc
-class _$RemoteWordModelDetailedCopyWithImpl<$Res,
-        $Val extends RemoteWordModelDetailed>
-    implements $RemoteWordModelDetailedCopyWith<$Res> {
-  _$RemoteWordModelDetailedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -239,7 +87,7 @@ class _$RemoteWordModelDetailedCopyWithImpl<$Res,
       sourceUrls: null == sourceUrls
           ? _value.sourceUrls
           : sourceUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>,
     ) as $Val);
   }
 
@@ -253,11 +101,11 @@ class _$RemoteWordModelDetailedCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RemoteWordModelDetailedCopyWith<$Res>
-    implements $RemoteWordModelDetailedCopyWith<$Res> {
-  factory _$$_RemoteWordModelDetailedCopyWith(_$_RemoteWordModelDetailed value,
-          $Res Function(_$_RemoteWordModelDetailed) then) =
-      __$$_RemoteWordModelDetailedCopyWithImpl<$Res>;
+abstract class _$$_RemoteWordModelCopyWith<$Res>
+    implements $RemoteWordModelCopyWith<$Res> {
+  factory _$$_RemoteWordModelCopyWith(
+          _$_RemoteWordModel value, $Res Function(_$_RemoteWordModel) then) =
+      __$$_RemoteWordModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -265,19 +113,18 @@ abstract class _$$_RemoteWordModelDetailedCopyWith<$Res>
       List<PhoneticsDetailed> phonetics,
       List<MeaningsDetailed> meanings,
       LicenseDetailed license,
-      List<String> sourceUrls});
+      List<String?> sourceUrls});
 
   @override
   $LicenseDetailedCopyWith<$Res> get license;
 }
 
 /// @nodoc
-class __$$_RemoteWordModelDetailedCopyWithImpl<$Res>
-    extends _$RemoteWordModelDetailedCopyWithImpl<$Res,
-        _$_RemoteWordModelDetailed>
-    implements _$$_RemoteWordModelDetailedCopyWith<$Res> {
-  __$$_RemoteWordModelDetailedCopyWithImpl(_$_RemoteWordModelDetailed _value,
-      $Res Function(_$_RemoteWordModelDetailed) _then)
+class __$$_RemoteWordModelCopyWithImpl<$Res>
+    extends _$RemoteWordModelCopyWithImpl<$Res, _$_RemoteWordModel>
+    implements _$$_RemoteWordModelCopyWith<$Res> {
+  __$$_RemoteWordModelCopyWithImpl(
+      _$_RemoteWordModel _value, $Res Function(_$_RemoteWordModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -289,7 +136,7 @@ class __$$_RemoteWordModelDetailedCopyWithImpl<$Res>
     Object? license = null,
     Object? sourceUrls = null,
   }) {
-    return _then(_$_RemoteWordModelDetailed(
+    return _then(_$_RemoteWordModel(
       word: null == word
           ? _value.word
           : word // ignore: cast_nullable_to_non_nullable
@@ -309,26 +156,26 @@ class __$$_RemoteWordModelDetailedCopyWithImpl<$Res>
       sourceUrls: null == sourceUrls
           ? _value._sourceUrls
           : sourceUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_RemoteWordModelDetailed implements _RemoteWordModelDetailed {
-  const _$_RemoteWordModelDetailed(
+class _$_RemoteWordModel implements _RemoteWordModel {
+  const _$_RemoteWordModel(
       {required this.word,
       required final List<PhoneticsDetailed> phonetics,
       required final List<MeaningsDetailed> meanings,
       required this.license,
-      required final List<String> sourceUrls})
+      required final List<String?> sourceUrls})
       : _phonetics = phonetics,
         _meanings = meanings,
         _sourceUrls = sourceUrls;
 
-  factory _$_RemoteWordModelDetailed.fromJson(Map<String, dynamic> json) =>
-      _$$_RemoteWordModelDetailedFromJson(json);
+  factory _$_RemoteWordModel.fromJson(Map<String, dynamic> json) =>
+      _$$_RemoteWordModelFromJson(json);
 
   @override
   final String word;
@@ -350,9 +197,9 @@ class _$_RemoteWordModelDetailed implements _RemoteWordModelDetailed {
 
   @override
   final LicenseDetailed license;
-  final List<String> _sourceUrls;
+  final List<String?> _sourceUrls;
   @override
-  List<String> get sourceUrls {
+  List<String?> get sourceUrls {
     if (_sourceUrls is EqualUnmodifiableListView) return _sourceUrls;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_sourceUrls);
@@ -360,14 +207,14 @@ class _$_RemoteWordModelDetailed implements _RemoteWordModelDetailed {
 
   @override
   String toString() {
-    return 'RemoteWordModelDetailed(word: $word, phonetics: $phonetics, meanings: $meanings, license: $license, sourceUrls: $sourceUrls)';
+    return 'RemoteWordModel(word: $word, phonetics: $phonetics, meanings: $meanings, license: $license, sourceUrls: $sourceUrls)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RemoteWordModelDetailed &&
+            other is _$_RemoteWordModel &&
             (identical(other.word, word) || other.word == word) &&
             const DeepCollectionEquality()
                 .equals(other._phonetics, _phonetics) &&
@@ -390,29 +237,27 @@ class _$_RemoteWordModelDetailed implements _RemoteWordModelDetailed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RemoteWordModelDetailedCopyWith<_$_RemoteWordModelDetailed>
-      get copyWith =>
-          __$$_RemoteWordModelDetailedCopyWithImpl<_$_RemoteWordModelDetailed>(
-              this, _$identity);
+  _$$_RemoteWordModelCopyWith<_$_RemoteWordModel> get copyWith =>
+      __$$_RemoteWordModelCopyWithImpl<_$_RemoteWordModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RemoteWordModelDetailedToJson(
+    return _$$_RemoteWordModelToJson(
       this,
     );
   }
 }
 
-abstract class _RemoteWordModelDetailed implements RemoteWordModelDetailed {
-  const factory _RemoteWordModelDetailed(
+abstract class _RemoteWordModel implements RemoteWordModel {
+  const factory _RemoteWordModel(
       {required final String word,
       required final List<PhoneticsDetailed> phonetics,
       required final List<MeaningsDetailed> meanings,
       required final LicenseDetailed license,
-      required final List<String> sourceUrls}) = _$_RemoteWordModelDetailed;
+      required final List<String?> sourceUrls}) = _$_RemoteWordModel;
 
-  factory _RemoteWordModelDetailed.fromJson(Map<String, dynamic> json) =
-      _$_RemoteWordModelDetailed.fromJson;
+  factory _RemoteWordModel.fromJson(Map<String, dynamic> json) =
+      _$_RemoteWordModel.fromJson;
 
   @override
   String get word;
@@ -423,11 +268,11 @@ abstract class _RemoteWordModelDetailed implements RemoteWordModelDetailed {
   @override
   LicenseDetailed get license;
   @override
-  List<String> get sourceUrls;
+  List<String?> get sourceUrls;
   @override
   @JsonKey(ignore: true)
-  _$$_RemoteWordModelDetailedCopyWith<_$_RemoteWordModelDetailed>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_RemoteWordModelCopyWith<_$_RemoteWordModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PhoneticsDetailed _$PhoneticsDetailedFromJson(Map<String, dynamic> json) {
@@ -648,10 +493,10 @@ MeaningsDetailed _$MeaningsDetailedFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MeaningsDetailed {
   String? get partOfSpeech => throw _privateConstructorUsedError;
-  List<DefinitionsDetailed> get definitions =>
+  List<DefinitionsDetailed>? get definitions =>
       throw _privateConstructorUsedError;
-  List<String?> get synonyms => throw _privateConstructorUsedError;
-  List<String?> get antonyms => throw _privateConstructorUsedError;
+  List<String?>? get synonyms => throw _privateConstructorUsedError;
+  List<String?>? get antonyms => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -667,9 +512,9 @@ abstract class $MeaningsDetailedCopyWith<$Res> {
   @useResult
   $Res call(
       {String? partOfSpeech,
-      List<DefinitionsDetailed> definitions,
-      List<String?> synonyms,
-      List<String?> antonyms});
+      List<DefinitionsDetailed>? definitions,
+      List<String?>? synonyms,
+      List<String?>? antonyms});
 }
 
 /// @nodoc
@@ -686,27 +531,27 @@ class _$MeaningsDetailedCopyWithImpl<$Res, $Val extends MeaningsDetailed>
   @override
   $Res call({
     Object? partOfSpeech = freezed,
-    Object? definitions = null,
-    Object? synonyms = null,
-    Object? antonyms = null,
+    Object? definitions = freezed,
+    Object? synonyms = freezed,
+    Object? antonyms = freezed,
   }) {
     return _then(_value.copyWith(
       partOfSpeech: freezed == partOfSpeech
           ? _value.partOfSpeech
           : partOfSpeech // ignore: cast_nullable_to_non_nullable
               as String?,
-      definitions: null == definitions
+      definitions: freezed == definitions
           ? _value.definitions
           : definitions // ignore: cast_nullable_to_non_nullable
-              as List<DefinitionsDetailed>,
-      synonyms: null == synonyms
+              as List<DefinitionsDetailed>?,
+      synonyms: freezed == synonyms
           ? _value.synonyms
           : synonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      antonyms: null == antonyms
+              as List<String?>?,
+      antonyms: freezed == antonyms
           ? _value.antonyms
           : antonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
     ) as $Val);
   }
 }
@@ -721,9 +566,9 @@ abstract class _$$_MeaningsDetailedCopyWith<$Res>
   @useResult
   $Res call(
       {String? partOfSpeech,
-      List<DefinitionsDetailed> definitions,
-      List<String?> synonyms,
-      List<String?> antonyms});
+      List<DefinitionsDetailed>? definitions,
+      List<String?>? synonyms,
+      List<String?>? antonyms});
 }
 
 /// @nodoc
@@ -738,27 +583,27 @@ class __$$_MeaningsDetailedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? partOfSpeech = freezed,
-    Object? definitions = null,
-    Object? synonyms = null,
-    Object? antonyms = null,
+    Object? definitions = freezed,
+    Object? synonyms = freezed,
+    Object? antonyms = freezed,
   }) {
     return _then(_$_MeaningsDetailed(
       partOfSpeech: freezed == partOfSpeech
           ? _value.partOfSpeech
           : partOfSpeech // ignore: cast_nullable_to_non_nullable
               as String?,
-      definitions: null == definitions
+      definitions: freezed == definitions
           ? _value._definitions
           : definitions // ignore: cast_nullable_to_non_nullable
-              as List<DefinitionsDetailed>,
-      synonyms: null == synonyms
+              as List<DefinitionsDetailed>?,
+      synonyms: freezed == synonyms
           ? _value._synonyms
           : synonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      antonyms: null == antonyms
+              as List<String?>?,
+      antonyms: freezed == antonyms
           ? _value._antonyms
           : antonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
     ));
   }
 }
@@ -768,9 +613,9 @@ class __$$_MeaningsDetailedCopyWithImpl<$Res>
 class _$_MeaningsDetailed implements _MeaningsDetailed {
   const _$_MeaningsDetailed(
       {required this.partOfSpeech,
-      required final List<DefinitionsDetailed> definitions,
-      required final List<String?> synonyms,
-      required final List<String?> antonyms})
+      required final List<DefinitionsDetailed>? definitions,
+      required final List<String?>? synonyms,
+      required final List<String?>? antonyms})
       : _definitions = definitions,
         _synonyms = synonyms,
         _antonyms = antonyms;
@@ -780,28 +625,34 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
 
   @override
   final String? partOfSpeech;
-  final List<DefinitionsDetailed> _definitions;
+  final List<DefinitionsDetailed>? _definitions;
   @override
-  List<DefinitionsDetailed> get definitions {
+  List<DefinitionsDetailed>? get definitions {
+    final value = _definitions;
+    if (value == null) return null;
     if (_definitions is EqualUnmodifiableListView) return _definitions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_definitions);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String?> _synonyms;
+  final List<String?>? _synonyms;
   @override
-  List<String?> get synonyms {
+  List<String?>? get synonyms {
+    final value = _synonyms;
+    if (value == null) return null;
     if (_synonyms is EqualUnmodifiableListView) return _synonyms;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_synonyms);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String?> _antonyms;
+  final List<String?>? _antonyms;
   @override
-  List<String?> get antonyms {
+  List<String?>? get antonyms {
+    final value = _antonyms;
+    if (value == null) return null;
     if (_antonyms is EqualUnmodifiableListView) return _antonyms;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_antonyms);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -848,9 +699,9 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
 abstract class _MeaningsDetailed implements MeaningsDetailed {
   const factory _MeaningsDetailed(
       {required final String? partOfSpeech,
-      required final List<DefinitionsDetailed> definitions,
-      required final List<String?> synonyms,
-      required final List<String?> antonyms}) = _$_MeaningsDetailed;
+      required final List<DefinitionsDetailed>? definitions,
+      required final List<String?>? synonyms,
+      required final List<String?>? antonyms}) = _$_MeaningsDetailed;
 
   factory _MeaningsDetailed.fromJson(Map<String, dynamic> json) =
       _$_MeaningsDetailed.fromJson;
@@ -858,11 +709,11 @@ abstract class _MeaningsDetailed implements MeaningsDetailed {
   @override
   String? get partOfSpeech;
   @override
-  List<DefinitionsDetailed> get definitions;
+  List<DefinitionsDetailed>? get definitions;
   @override
-  List<String?> get synonyms;
+  List<String?>? get synonyms;
   @override
-  List<String?> get antonyms;
+  List<String?>? get antonyms;
   @override
   @JsonKey(ignore: true)
   _$$_MeaningsDetailedCopyWith<_$_MeaningsDetailed> get copyWith =>
@@ -876,8 +727,8 @@ DefinitionsDetailed _$DefinitionsDetailedFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DefinitionsDetailed {
   String? get definition => throw _privateConstructorUsedError;
-  List<String?> get synonyms => throw _privateConstructorUsedError;
-  List<String?> get antonyms => throw _privateConstructorUsedError;
+  List<String?>? get synonyms => throw _privateConstructorUsedError;
+  List<String?>? get antonyms => throw _privateConstructorUsedError;
   String? get example => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -894,8 +745,8 @@ abstract class $DefinitionsDetailedCopyWith<$Res> {
   @useResult
   $Res call(
       {String? definition,
-      List<String?> synonyms,
-      List<String?> antonyms,
+      List<String?>? synonyms,
+      List<String?>? antonyms,
       String? example});
 }
 
@@ -913,8 +764,8 @@ class _$DefinitionsDetailedCopyWithImpl<$Res, $Val extends DefinitionsDetailed>
   @override
   $Res call({
     Object? definition = freezed,
-    Object? synonyms = null,
-    Object? antonyms = null,
+    Object? synonyms = freezed,
+    Object? antonyms = freezed,
     Object? example = freezed,
   }) {
     return _then(_value.copyWith(
@@ -922,14 +773,14 @@ class _$DefinitionsDetailedCopyWithImpl<$Res, $Val extends DefinitionsDetailed>
           ? _value.definition
           : definition // ignore: cast_nullable_to_non_nullable
               as String?,
-      synonyms: null == synonyms
+      synonyms: freezed == synonyms
           ? _value.synonyms
           : synonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      antonyms: null == antonyms
+              as List<String?>?,
+      antonyms: freezed == antonyms
           ? _value.antonyms
           : antonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
       example: freezed == example
           ? _value.example
           : example // ignore: cast_nullable_to_non_nullable
@@ -948,8 +799,8 @@ abstract class _$$_DefinitionsDetailedCopyWith<$Res>
   @useResult
   $Res call(
       {String? definition,
-      List<String?> synonyms,
-      List<String?> antonyms,
+      List<String?>? synonyms,
+      List<String?>? antonyms,
       String? example});
 }
 
@@ -965,8 +816,8 @@ class __$$_DefinitionsDetailedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? definition = freezed,
-    Object? synonyms = null,
-    Object? antonyms = null,
+    Object? synonyms = freezed,
+    Object? antonyms = freezed,
     Object? example = freezed,
   }) {
     return _then(_$_DefinitionsDetailed(
@@ -974,14 +825,14 @@ class __$$_DefinitionsDetailedCopyWithImpl<$Res>
           ? _value.definition
           : definition // ignore: cast_nullable_to_non_nullable
               as String?,
-      synonyms: null == synonyms
+      synonyms: freezed == synonyms
           ? _value._synonyms
           : synonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      antonyms: null == antonyms
+              as List<String?>?,
+      antonyms: freezed == antonyms
           ? _value._antonyms
           : antonyms // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+              as List<String?>?,
       example: freezed == example
           ? _value.example
           : example // ignore: cast_nullable_to_non_nullable
@@ -995,8 +846,8 @@ class __$$_DefinitionsDetailedCopyWithImpl<$Res>
 class _$_DefinitionsDetailed implements _DefinitionsDetailed {
   const _$_DefinitionsDetailed(
       {required this.definition,
-      required final List<String?> synonyms,
-      required final List<String?> antonyms,
+      required final List<String?>? synonyms,
+      required final List<String?>? antonyms,
       required this.example})
       : _synonyms = synonyms,
         _antonyms = antonyms;
@@ -1006,20 +857,24 @@ class _$_DefinitionsDetailed implements _DefinitionsDetailed {
 
   @override
   final String? definition;
-  final List<String?> _synonyms;
+  final List<String?>? _synonyms;
   @override
-  List<String?> get synonyms {
+  List<String?>? get synonyms {
+    final value = _synonyms;
+    if (value == null) return null;
     if (_synonyms is EqualUnmodifiableListView) return _synonyms;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_synonyms);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String?> _antonyms;
+  final List<String?>? _antonyms;
   @override
-  List<String?> get antonyms {
+  List<String?>? get antonyms {
+    final value = _antonyms;
+    if (value == null) return null;
     if (_antonyms is EqualUnmodifiableListView) return _antonyms;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_antonyms);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -1069,8 +924,8 @@ class _$_DefinitionsDetailed implements _DefinitionsDetailed {
 abstract class _DefinitionsDetailed implements DefinitionsDetailed {
   const factory _DefinitionsDetailed(
       {required final String? definition,
-      required final List<String?> synonyms,
-      required final List<String?> antonyms,
+      required final List<String?>? synonyms,
+      required final List<String?>? antonyms,
       required final String? example}) = _$_DefinitionsDetailed;
 
   factory _DefinitionsDetailed.fromJson(Map<String, dynamic> json) =
@@ -1079,9 +934,9 @@ abstract class _DefinitionsDetailed implements DefinitionsDetailed {
   @override
   String? get definition;
   @override
-  List<String?> get synonyms;
+  List<String?>? get synonyms;
   @override
-  List<String?> get antonyms;
+  List<String?>? get antonyms;
   @override
   String? get example;
   @override

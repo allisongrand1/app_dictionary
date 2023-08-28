@@ -8,9 +8,9 @@ class InitialState extends AddWordState {}
 class LoadingState extends AddWordState {}
 
 class LoadedNewWordState extends AddWordState {
-  final Stream<RemoteWordModel> stream;
+  final RemoteWordModel word;
 
-  LoadedNewWordState(this.stream);
+  LoadedNewWordState(this.word);
 }
 
 class FailState extends AddWordState {

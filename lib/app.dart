@@ -1,6 +1,9 @@
 import 'package:app_dictionary/data/repository/repository.dart';
 import 'package:app_dictionary/data/server/server.dart';
+import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_bloc.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_bloc.dart';
+import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_event.dart';
+import 'package:app_dictionary/service_locator.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,7 +18,10 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider<HomeBloc>(
           create: (BuildContext context) =>
-              HomeBloc(HomePageRepository(RemoteDataSourceImpl(Dio()))),
+              getIt<HomeBloc>()..add(DowloandHomePageEvent()),
+        ),
+        BlocProvider<AddWordBloc>(
+          create: (BuildContext context) => getIt<AddWordBloc>(),
         ),
       ],
       child: MaterialApp(

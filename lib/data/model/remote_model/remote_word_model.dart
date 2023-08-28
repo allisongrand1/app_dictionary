@@ -6,25 +6,15 @@ part 'remote_word_model.g.dart';
 @freezed
 class RemoteWordModel with _$RemoteWordModel {
   const factory RemoteWordModel({
-    required RemoteWordModelDetailed model,
-  }) = _RemoteWordModel;
-
-  factory RemoteWordModel.fromJson(Map<String, dynamic> json) =>
-      _$RemoteWordModelFromJson(json);
-}
-
-@freezed
-class RemoteWordModelDetailed with _$RemoteWordModelDetailed {
-  const factory RemoteWordModelDetailed({
     required String word,
     required List<PhoneticsDetailed> phonetics,
     required List<MeaningsDetailed> meanings,
     required LicenseDetailed license,
-    required List<String> sourceUrls,
-  }) = _RemoteWordModelDetailed;
+    required List<String?> sourceUrls,
+  }) = _RemoteWordModel;
 
-  factory RemoteWordModelDetailed.fromJson(Map<String, dynamic> json) =>
-      _$RemoteWordModelDetailedFromJson(json);
+  factory RemoteWordModel.fromJson(Map<String, dynamic> json) =>
+      _$RemoteWordModelFromJson(json);
 }
 
 @freezed
@@ -44,9 +34,9 @@ class PhoneticsDetailed with _$PhoneticsDetailed {
 class MeaningsDetailed with _$MeaningsDetailed {
   const factory MeaningsDetailed({
     required String? partOfSpeech,
-    required List<DefinitionsDetailed> definitions,
-    required List<String?> synonyms,
-    required List<String?> antonyms,
+    required List<DefinitionsDetailed>? definitions,
+    required List<String?>? synonyms,
+    required List<String?>? antonyms,
   }) = _MeaningsDetailed;
 
   factory MeaningsDetailed.fromJson(Map<String, dynamic> json) =>
@@ -57,8 +47,8 @@ class MeaningsDetailed with _$MeaningsDetailed {
 class DefinitionsDetailed with _$DefinitionsDetailed {
   const factory DefinitionsDetailed({
     required String? definition,
-    required List<String?> synonyms,
-    required List<String?> antonyms,
+    required List<String?>? synonyms,
+    required List<String?>? antonyms,
     required String? example,
   }) = _DefinitionsDetailed;
 
