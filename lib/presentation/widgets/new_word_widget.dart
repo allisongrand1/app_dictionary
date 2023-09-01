@@ -1,5 +1,6 @@
 import 'package:app_dictionary/data/model/remote_model/remote_word_model.dart';
 import 'package:app_dictionary/presentation/widgets/bloc_of_text.dart';
+import 'package:app_dictionary/presentation/widgets/work_type_select_drop_list.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
@@ -22,23 +23,11 @@ class _NewWordWidgetState extends State<NewWordWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      if (states.any(interactiveStates.contains)) {
-        return Colors.blue;
-      }
-      return Colors.red;
-    }
-
     return Column(
       children: [
-        Text('${widget.word.word}'),
+        Center(child: Text('${widget.word.word}')),
         for (var phonetics in widget.word.phonetics)
-          Column(
+          Row(
             children: [
               Text('${phonetics.text ?? ''}'),
               IconButton(
@@ -50,39 +39,18 @@ class _NewWordWidgetState extends State<NewWordWidget> {
                   icon: Icon(Icons.play_arrow)),
             ],
           ),
-        for (var meanings in widget.word.meanings)
-          Column(
-            children: [
-              Text('${meanings.partOfSpeech ?? ''}'),
-              for (var definition in meanings.definitions!)
-                Column(
-                  children: [
-                    Text('${definition.definition ?? ''}'),
-                    (definition.synonyms != null)
-                        ? BlocOfText(
-                            list: definition.synonyms!,
-                          )
-                        : Container(),
-                  ],
-                ),
-            ],
-          ),
-        Row(
-          children: [
-            Checkbox(
-              checkColor: Colors.white,
-              fillColor: MaterialStateProperty.resolveWith(getColor),
-              value: isChecked,
-              onChanged: (bool? value) {
-                setState(() {
-                  isChecked = value!;
-                });
-              },
-            ),
-            Text('${widget.word.phonetics}'),
-          ],
-        )
+        Text('Meanings'),
+        _buildDropList(widget.word.meanings, context),
       ],
     );
+  }
+
+  Widget _buildDropList(List<MeaningsDetailed> meanings, BuildContext context) {
+    return Column(
+        children: meanings
+            .map((e) => PhoneticsSelectDropList(
+                phoneticsSelected: e.partOfSpeech!,
+                definationList: e.definitions!))
+            .toList());
   }
 }

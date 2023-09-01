@@ -497,6 +497,7 @@ mixin _$MeaningsDetailed {
       throw _privateConstructorUsedError;
   List<String?>? get synonyms => throw _privateConstructorUsedError;
   List<String?>? get antonyms => throw _privateConstructorUsedError;
+  bool? get isSelected => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -514,7 +515,8 @@ abstract class $MeaningsDetailedCopyWith<$Res> {
       {String? partOfSpeech,
       List<DefinitionsDetailed>? definitions,
       List<String?>? synonyms,
-      List<String?>? antonyms});
+      List<String?>? antonyms,
+      bool? isSelected});
 }
 
 /// @nodoc
@@ -534,6 +536,7 @@ class _$MeaningsDetailedCopyWithImpl<$Res, $Val extends MeaningsDetailed>
     Object? definitions = freezed,
     Object? synonyms = freezed,
     Object? antonyms = freezed,
+    Object? isSelected = freezed,
   }) {
     return _then(_value.copyWith(
       partOfSpeech: freezed == partOfSpeech
@@ -552,6 +555,10 @@ class _$MeaningsDetailedCopyWithImpl<$Res, $Val extends MeaningsDetailed>
           ? _value.antonyms
           : antonyms // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
+      isSelected: freezed == isSelected
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -568,7 +575,8 @@ abstract class _$$_MeaningsDetailedCopyWith<$Res>
       {String? partOfSpeech,
       List<DefinitionsDetailed>? definitions,
       List<String?>? synonyms,
-      List<String?>? antonyms});
+      List<String?>? antonyms,
+      bool? isSelected});
 }
 
 /// @nodoc
@@ -586,6 +594,7 @@ class __$$_MeaningsDetailedCopyWithImpl<$Res>
     Object? definitions = freezed,
     Object? synonyms = freezed,
     Object? antonyms = freezed,
+    Object? isSelected = freezed,
   }) {
     return _then(_$_MeaningsDetailed(
       partOfSpeech: freezed == partOfSpeech
@@ -604,6 +613,10 @@ class __$$_MeaningsDetailedCopyWithImpl<$Res>
           ? _value._antonyms
           : antonyms // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
+      isSelected: freezed == isSelected
+          ? _value.isSelected
+          : isSelected // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -615,7 +628,8 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
       {required this.partOfSpeech,
       required final List<DefinitionsDetailed>? definitions,
       required final List<String?>? synonyms,
-      required final List<String?>? antonyms})
+      required final List<String?>? antonyms,
+      required this.isSelected})
       : _definitions = definitions,
         _synonyms = synonyms,
         _antonyms = antonyms;
@@ -656,8 +670,11 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
   }
 
   @override
+  final bool? isSelected;
+
+  @override
   String toString() {
-    return 'MeaningsDetailed(partOfSpeech: $partOfSpeech, definitions: $definitions, synonyms: $synonyms, antonyms: $antonyms)';
+    return 'MeaningsDetailed(partOfSpeech: $partOfSpeech, definitions: $definitions, synonyms: $synonyms, antonyms: $antonyms, isSelected: $isSelected)';
   }
 
   @override
@@ -670,7 +687,9 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
             const DeepCollectionEquality()
                 .equals(other._definitions, _definitions) &&
             const DeepCollectionEquality().equals(other._synonyms, _synonyms) &&
-            const DeepCollectionEquality().equals(other._antonyms, _antonyms));
+            const DeepCollectionEquality().equals(other._antonyms, _antonyms) &&
+            (identical(other.isSelected, isSelected) ||
+                other.isSelected == isSelected));
   }
 
   @JsonKey(ignore: true)
@@ -680,7 +699,8 @@ class _$_MeaningsDetailed implements _MeaningsDetailed {
       partOfSpeech,
       const DeepCollectionEquality().hash(_definitions),
       const DeepCollectionEquality().hash(_synonyms),
-      const DeepCollectionEquality().hash(_antonyms));
+      const DeepCollectionEquality().hash(_antonyms),
+      isSelected);
 
   @JsonKey(ignore: true)
   @override
@@ -701,7 +721,8 @@ abstract class _MeaningsDetailed implements MeaningsDetailed {
       {required final String? partOfSpeech,
       required final List<DefinitionsDetailed>? definitions,
       required final List<String?>? synonyms,
-      required final List<String?>? antonyms}) = _$_MeaningsDetailed;
+      required final List<String?>? antonyms,
+      required final bool? isSelected}) = _$_MeaningsDetailed;
 
   factory _MeaningsDetailed.fromJson(Map<String, dynamic> json) =
       _$_MeaningsDetailed.fromJson;
@@ -714,6 +735,8 @@ abstract class _MeaningsDetailed implements MeaningsDetailed {
   List<String?>? get synonyms;
   @override
   List<String?>? get antonyms;
+  @override
+  bool? get isSelected;
   @override
   @JsonKey(ignore: true)
   _$$_MeaningsDetailedCopyWith<_$_MeaningsDetailed> get copyWith =>

@@ -37,6 +37,7 @@ class MeaningsDetailed with _$MeaningsDetailed {
     required List<DefinitionsDetailed>? definitions,
     required List<String?>? synonyms,
     required List<String?>? antonyms,
+    required bool? isSelected,
   }) = _MeaningsDetailed;
 
   factory MeaningsDetailed.fromJson(Map<String, dynamic> json) =>

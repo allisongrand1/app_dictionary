@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
 import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_bloc.dart';
 import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_event.dart';
@@ -35,9 +36,13 @@ class _HomePageState extends State<HomePage> {
               });
             }
             return Center(
-              child: Text(
-                  'Спиcок пока пуст:( /n/n Попробуйте дополнить его новыми словами!'),
-            );
+                child: _buildAnimationText(
+              'Спиcок пока пуст:(',
+              () {
+                _buildAnimationText(
+                    'Попробуйте дополнить его новыми словами!', null);
+              },
+            ));
           } else if (state is FailState) {
             return Center(
               child: Text('Ошибка'),
@@ -52,34 +57,32 @@ class _HomePageState extends State<HomePage> {
           Positioned(
             bottom: 10,
             child: Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                BoxShadow(
-                    color: Colors.white,
-                    offset: Offset(-5, -5),
-                    spreadRadius: 1,
-                    blurRadius: 15),
-                BoxShadow(
-                    color: Color.fromARGB(143, 84, 112, 124),
-                    offset: Offset(5, 5),
-                    spreadRadius: 1,
-                    blurRadius: 15),
-              ],
-                  border: Border.all(color: Color.fromARGB(24, 84, 112, 124)),
-                  shape: BoxShape.circle,
-                  color: Colors.amber,
-                ),
-                child: IconButton(
-                    icon: Icon(
-                      Icons.add,
-                      color: Color.fromARGB(108, 84, 112, 124),
-                    ),
-                    onPressed: () {
-                      
-                      Navigator.of(context).pushNamed('/new');
-                    }),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-5, -5),
+                      spreadRadius: 1,
+                      blurRadius: 15),
+                  BoxShadow(
+                      color: Color.fromARGB(143, 84, 112, 124),
+                      offset: Offset(5, 5),
+                      spreadRadius: 1,
+                      blurRadius: 15),
+                ],
+                border: Border.all(color: Color.fromARGB(24, 84, 112, 124)),
+                shape: BoxShape.circle,
+                color: Colors.amber,
               ),
-          
+              child: IconButton(
+                  icon: Icon(
+                    Icons.add,
+                    color: Color.fromARGB(108, 84, 112, 124),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/new');
+                  }),
+            ),
           ),
           Container(
             height: 70,
@@ -87,5 +90,23 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  Widget _buildAnimationText(String text, VoidCallback? onFinished) {
+    return AnimatedTextKit(
+        repeatForever: false,
+        isRepeatingAnimation: false,
+        onFinished: (onFinished != null) ? onFinished : null,
+        animatedTexts: [
+          TypewriterAnimatedText(
+            text,
+            textStyle: const TextStyle(
+              fontFamily: 'Handjet',
+              fontWeight: FontWeight.w500,
+              fontSize: 24,
+            ),
+            speed: const Duration(milliseconds: 200),
+          ),
+        ]);
   }
 }

@@ -60,6 +60,7 @@ _$_MeaningsDetailed _$$_MeaningsDetailedFromJson(Map<String, dynamic> json) =>
       antonyms: (json['antonyms'] as List<dynamic>?)
           ?.map((e) => e as String?)
           .toList(),
+      isSelected: json['isSelected'] as bool?,
     );
 
 Map<String, dynamic> _$$_MeaningsDetailedToJson(_$_MeaningsDetailed instance) =>
@@ -68,6 +69,7 @@ Map<String, dynamic> _$$_MeaningsDetailedToJson(_$_MeaningsDetailed instance) =>
       'definitions': instance.definitions,
       'synonyms': instance.synonyms,
       'antonyms': instance.antonyms,
+      'isSelected': instance.isSelected,
     };
 
 _$_DefinitionsDetailed _$$_DefinitionsDetailedFromJson(
