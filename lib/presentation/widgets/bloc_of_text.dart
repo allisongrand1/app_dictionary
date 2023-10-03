@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../../common/dictionary/dictionary.dart';
 
 class BlocOfText<T> extends StatelessWidget {
   final List<T> list;
@@ -8,14 +8,10 @@ class BlocOfText<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     if (list.isNotEmpty) {
       return Column(
-        children: [ 
-          for (var index in list) 
-          Text('${index}')
-        ],
+        children: [for (var index in list) Text('${index}')],
       );
     } else {
       return Container();
     }
-    
   }
 }

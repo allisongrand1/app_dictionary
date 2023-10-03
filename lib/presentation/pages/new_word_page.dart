@@ -1,10 +1,8 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
 import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_bloc.dart';
 import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_event.dart';
 import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_state.dart';
 import 'package:app_dictionary/presentation/widgets/new_word_widget.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewWordPage extends StatefulWidget {
   const NewWordPage({super.key});

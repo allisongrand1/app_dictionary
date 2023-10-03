@@ -1,12 +1,15 @@
-import 'package:app_dictionary/presentation/pages/home_page.dart';
-import 'package:app_dictionary/presentation/pages/new_word_page.dart';
-
 import 'common/dictionary/dictionary.dart';
 
 class RouterFluro {
   static FluroRouter router = FluroRouter();
-  static const routerHomePage = '/';
+  static const routerAuthPage = '/';
+  static const routerHomePage = '/home';
   static const routerNewWordPage = '/new';
+
+  static final authPageHandler =
+      Handler(handlerFunc: (context, Map<String, dynamic> params) {
+    return const AuthPage();
+  });
 
   static final homePageHandler =
       Handler(handlerFunc: (context, Map<String, dynamic> params) {
@@ -19,6 +22,8 @@ class RouterFluro {
   });
 
   static void defineRoutes() {
+    router.define(routerAuthPage,
+        handler: authPageHandler, transitionType: TransitionType.material);
     router.define(routerHomePage,
         handler: homePageHandler, transitionType: TransitionType.material);
     router.define(routerNewWordPage,

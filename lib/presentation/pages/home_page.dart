@@ -1,10 +1,5 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
-import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_bloc.dart';
-import 'package:app_dictionary/infrastructure/add_word_bloc/add_word_event.dart';
-import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_bloc.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(automaticallyImplyLeading: false),
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           if (state is InitialState) {
@@ -36,11 +32,13 @@ class _HomePageState extends State<HomePage> {
               });
             }
             return Center(
-                child: _buildAnimationText(
-              'Спиcок пока пуст:(',
-              () {
-                _buildAnimationText(
-                    'Попробуйте дополнить его новыми словами!', null);
+                child: AnimatedTextTyping(
+              textStyle: TextCustomTheme().headlineLarge,
+              text: 'Спиcок пока пуст:(',
+              onFinished: () {
+                AnimatedTextTyping(
+                    textStyle: TextCustomTheme().headlineLarge,
+                    text: 'Попробуйте дополнить его новыми словами!');
               },
             ));
           } else if (state is FailState) {
@@ -90,23 +88,5 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
-  }
-
-  Widget _buildAnimationText(String text, VoidCallback? onFinished) {
-    return AnimatedTextKit(
-        repeatForever: false,
-        isRepeatingAnimation: false,
-        onFinished: (onFinished != null) ? onFinished : null,
-        animatedTexts: [
-          TypewriterAnimatedText(
-            text,
-            textStyle: const TextStyle(
-              fontFamily: 'Handjet',
-              fontWeight: FontWeight.w500,
-              fontSize: 24,
-            ),
-            speed: const Duration(milliseconds: 200),
-          ),
-        ]);
   }
 }

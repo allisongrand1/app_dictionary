@@ -1,8 +1,7 @@
-import 'package:app_dictionary/data/model/remote_model/remote_word_model.dart';
-import 'package:app_dictionary/presentation/widgets/bloc_of_text.dart';
 import 'package:app_dictionary/presentation/widgets/work_type_select_drop_list.dart';
-import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/material.dart';
+import '../../../common/dictionary/dictionary.dart'
+    hide MeaningsDetailed, DefinitionsDetailed;
+import '../../data/model/remote_model/remote_word_model.dart';
 
 class NewWordWidget extends StatefulWidget {
   final RemoteWordModel word;

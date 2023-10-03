@@ -24,6 +24,7 @@ void registerServices() {
   // Datasources
   getIt.registerLazySingleton<RemoteDataSource>(
       () => RemoteDataSourceImpl(getIt()));
+  getIt.registerLazySingleton<AuthDataSource>(() => AuthDataSource());
 
   // Repositories
   getIt.registerLazySingleton<NewRemoteWordModelRepository>(
@@ -37,11 +38,13 @@ void registerServices() {
   getIt.registerLazySingleton<HomePageRepository>(() => HomePageRepository(
         getIt(),
       ));
+  getIt.registerLazySingleton<RepositoryAuth>(() => RepositoryAuth());
 
   // BLoCs
-  getIt.registerFactory(() => HomeBloc(getIt<HomePageRepository>()));
-  getIt.registerFactory(
+  getIt.registerFactory<HomeBloc>(() => HomeBloc(getIt<HomePageRepository>()));
+  getIt.registerFactory<AddWordBloc>(
       () => AddWordBloc(getIt<NewRemoteWordModelRepository>()));
+  getIt.registerFactory<AuthBloc>(() => AuthBloc(getIt()));
 /*   // Hive Register Adapters
   // First init enum
   Hive.registerAdapter(OrderStatusAdapter());

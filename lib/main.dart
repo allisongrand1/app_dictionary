@@ -1,7 +1,4 @@
-import 'package:app_dictionary/configs.dart';
-import 'package:app_dictionary/firebase_options.dart';
-import 'package:app_dictionary/service_locator.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 
 import 'common/dictionary/dictionary.dart';
 
@@ -14,4 +11,10 @@ Future initialize() async {
   log = getIt<Logger>();
   WidgetsFlutterBinding.ensureInitialized();
   RouterFluro.defineRoutes();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Color(0XFF07185e),
+  ));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }

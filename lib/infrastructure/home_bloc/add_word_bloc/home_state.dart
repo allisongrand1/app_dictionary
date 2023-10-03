@@ -1,5 +1,4 @@
-import 'package:app_dictionary/common/error/failure.dart';
-import 'package:app_dictionary/data/model/local_model/local_word_model.dart';
+import 'package:app_dictionary/common/dictionary/dictionary.dart';
 
 abstract class HomeState {}
 

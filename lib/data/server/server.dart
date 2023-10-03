@@ -1,6 +1,5 @@
 import 'package:app_dictionary/data/model/local_model/local_word_model.dart';
 import 'package:app_dictionary/data/model/remote_model/remote_word_model.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:app_dictionary/common/error/failure.dart';
 import 'package:app_dictionary/common/constants/constant.dart';
