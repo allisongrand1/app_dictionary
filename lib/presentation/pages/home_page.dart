@@ -1,5 +1,6 @@
 import 'package:app_dictionary/common/dictionary/dictionary.dart';
 import 'package:app_dictionary/infrastructure/home_bloc/add_word_bloc/home_state.dart';
+import 'package:app_dictionary/presentation/widgets/border_3d.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,16 +32,15 @@ class _HomePageState extends State<HomePage> {
                 );
               });
             }
-            return Center(
-                child: AnimatedTextTyping(
-              textStyle: TextCustomTheme().headlineLarge,
-              text: 'Спиcок пока пуст:(',
-              onFinished: () {
-                AnimatedTextTyping(
-                    textStyle: TextCustomTheme().headlineLarge,
-                    text: 'Попробуйте дополнить его новыми словами!');
-              },
-            ));
+            return Container(
+              color: Colors.white,
+              child: Center(
+                child: Border3D(
+                  width: 200,
+                  height: 200,
+                ),
+              ),
+            );
           } else if (state is FailState) {
             return Center(
               child: Text('Ошибка'),

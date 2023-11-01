@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         darkTheme: CustomTheme().darkTheme,
         title: 'App Dictionary',
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        /*  initialRoute: '/', */
         onGenerateRoute: RouterFluro.router.generator,
       ),
     );

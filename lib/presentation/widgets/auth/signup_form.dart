@@ -17,91 +17,143 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Form(
-        key: formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              alignment: Alignment.center,
-              height: 300,
-              child: AnimatedTextTyping(
-                text: 'Регистрация',
-                textStyle: TextCustomTheme()
-                    .headlineLarge
-                    .copyWith(color: Color.fromARGB(255, 0, 47, 112)),
+    return Form(
+      key: formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Color(0xff8DA1B1),
+                    width: 1,
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Flexible(
+                      child: Container(
+                        alignment: Alignment.center,
+                        /* height: 300, */
+                        child: AnimatedTextTyping(
+                          text: 'Регистрация',
+                          textStyle: TextCustomTheme()
+                              .headlineLarge
+                              .copyWith(color: Color(0xff8DA1B1)),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: TextFieldClass(
+                              controller: emailController,
+                              title: 'Email',
+                              validator: (input) {
+                                final bool emailValid = RegExp(
+                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    .hasMatch(input!);
+                                if (emailValid) {
+                                  return null;
+                                } else {
+                                  return "Проверьте почту";
+                                }
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: TextFieldClass(
+                              controller: passwordController,
+                              title: 'Пароль',
+                              validator: (value) =>
+                                  value != null && value.length < 6
+                                      ? 'Минимум 6 знаков'
+                                      : null,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Color(0xffEA9FDE),
+                                foregroundColor: Color(0xffffffff),
+                                fixedSize: Size(100, 80),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                ),
+                              ),
+                              onPressed: () {
+                                BlocProvider.of<AuthBloc>(context)
+                                    .add(InitialSignInAuthEvent());
+                              },
+                              child: const Text(
+                                'Вход',
+                              )),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xffEA9FDE),
+                                  foregroundColor: Color(0xffffffff),
+                                  fixedSize: Size(100, 80),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  BlocProvider.of<AuthBloc>(context).add(
+                                      SignUpAuthEvent(
+                                          key: formKey,
+                                          email: emailController.text.trim(),
+                                          password:
+                                              passwordController.text.trim()));
+                                },
+                                child: Icon(Icons.done_outline)),
+                          ),
+                          ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Color(0xffEA9FDE),
+                                foregroundColor: Color(0xffffffff),
+                                fixedSize: Size(100, 80),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                ),
+                              ),
+                              onPressed: () {
+                                BlocProvider.of<AuthBloc>(context)
+                                    .add(InitialSignUpAuthEvent());
+                              },
+                              child: const Text(
+                                'Регистрация',
+                              ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextFieldClass(
-                  controller: emailController,
-                  title: 'Email',
-                  validator: (input) {
-                    final bool emailValid = RegExp(
-                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                        .hasMatch(input!);
-                    if (emailValid) {
-                      return null;
-                    } else {
-                      return "Проверьте почту";
-                    }
-                  },
-                ),
-                TextFieldClass(
-                  controller: passwordController,
-                  title: 'Пароль',
-                  validator: (value) => value != null && value.length < 6
-                      ? 'Минимум 6 знаков'
-                      : null,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 50,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        /*   backgroundColor: AppColors.blue2,
-                            foregroundColor: h1medium.color */
-                      ),
-                      onPressed: () {
-                        BlocProvider.of<AuthBloc>(context).add(SignUpAuthEvent(
-                            key: formKey,
-                            email: emailController.text.trim(),
-                            password: passwordController.text.trim()));
-                      },
-                      child: const Text('Регистрация')),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Уже есть аккаунт?',
-                      /* style: TextStyle(color: AppColors.storm), */
-                    ),
-                    TextButton(
-                        style: TextButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ), /*  foregroundColor: AppColors.blue2 */
-                        ),
-                        onPressed: () {
-                          BlocProvider.of<AuthBloc>(context)
-                              .add(InitialSignInAuthEvent());
-                        },
-                        child: const Text('Вход'))
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

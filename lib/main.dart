@@ -12,7 +12,7 @@ Future initialize() async {
   WidgetsFlutterBinding.ensureInitialized();
   RouterFluro.defineRoutes();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Color(0XFF07185e),
+    systemNavigationBarColor: Colors.white,
   ));
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

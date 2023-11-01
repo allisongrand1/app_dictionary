@@ -26,8 +26,9 @@ class RouterFluro {
         handler: authPageHandler, transitionType: TransitionType.material);
     router.define(routerHomePage,
         handler: homePageHandler, transitionType: TransitionType.material);
-    router.define(routerNewWordPage,
-        handler: newWordPageHandler,
-        transitionType: TransitionType.cupertinoFullScreenDialog);
+    router.define(
+      routerNewWordPage,
+      handler: newWordPageHandler,
+    );
   }
 }
